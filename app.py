@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from openai import OpenAI
+from social_hability import activity_social_hability
+# from openai import OpenAI
 
 app = Flask(__name__)
 CORS(app)
@@ -28,6 +29,19 @@ CORS(app)
 #         answer = "Hubo un error al procesar tu solicitud."
 
 #     return jsonify({"answer": answer})
+
+
+@app.route('/hability-social', methods=['POST'])
+def hability_social():
+    data = request.get_json()
+    try:
+        answer = activity_social_hability(data["genre"], data["stage"])
+    except Exception as e:
+        print(f"Error: {e}")
+        answer = "Hubo un error al procesar tu solicitud"
+
+    return jsonify({"answer": answer})
+
 
 if __name__ == "__main__":
     app.run(debug=True)
