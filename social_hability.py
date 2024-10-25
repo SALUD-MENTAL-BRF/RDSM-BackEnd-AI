@@ -1,7 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 
-
 prompt = ChatPromptTemplate.from_messages([
     ("system", "Eres un asistente que genera simulaciones de conversaciones para mejorar habilidades sociales en diferentes escenarios."),
     ("user", "{question}")
@@ -25,6 +24,7 @@ def activity_social_hability(genre, stage):
           2) "Respuesta correcta."
           3) "Segunda respuesta incorrecta."
         - Correcta: INDICA EL NÚMERO DE LA RESPUESTA CORRECTA (1, 2 o 3).
+        - Explicación: "Explica por qué esta es la opción correcta en una o dos frases."
 
         **Ejemplo de formato correcto:**
         Escenario: "Estás en una reunión de trabajo y tu jefe te pide que presentes un informe."
@@ -33,6 +33,7 @@ def activity_social_hability(genre, stage):
         2) "Presentas el informe tal como te lo han pedido."
         3) "Dices que otra persona se encargará de la presentación."
         Correcta: 2
+        Explicación: "La opción 2 es correcta porque muestra responsabilidad y respeto hacia tu jefe al estar preparado."
 
         **Asegúrate de que el formato sea muy claro y que no haya variaciones en la estructura.** 
         """
