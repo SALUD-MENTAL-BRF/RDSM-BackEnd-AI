@@ -20,7 +20,7 @@ def hability_social():
 
     return jsonify({"answer": answer})
 
-@app.route('/logical-problem', methods='POST')
+@app.route('/logical-problem', methods=['POST'])
 def logical_problem():
     data = request.get_json()
 
