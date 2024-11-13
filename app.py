@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from social_hability import activity_social_hability
+from activities.social_hability import activity_social_hability
 
 app = Flask(__name__)
 CORS(app)
