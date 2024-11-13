@@ -19,7 +19,10 @@ def hability_social():
 
     return jsonify({"answer": answer})
 
+# @app.route('/logical-problem', methods='POST')
+# def logical_problem():
 
 if __name__ == "__main__":
     app.run(debug=True)
 
+    
