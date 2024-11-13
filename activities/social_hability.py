@@ -10,10 +10,10 @@ prompt = ChatPromptTemplate.from_messages([
 chain = prompt | model
 
 
-def activity_social_hability(age, genre, stage, complexity, personality):
+def activity_social_hability(data):
     respuesta = chain.invoke({
         "question": f"""
-        Crea un escenario social {complexity} acorde a mi edad de {age} años, en el cual estoy en {stage}, soy de género {genre} y personalidad es {personality}. 
+        Crea un escenario social {data["complexity"]} acorde a mi edad de {data["age"]} años, en el cual estoy en {data["stage"]}, soy de género {data["genre"]} y personalidad es {data["personality"]}. 
         Genera **tres respuestas posibles**: una debe ser correcta y las otras dos incorrectas. 
         Es **crucial** que incluyas todas las respuestas y que sigas estrictamente esta estructura:
 

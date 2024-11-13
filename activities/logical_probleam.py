@@ -10,10 +10,10 @@ prompt = ChatPromptTemplate.from_messages([
 chain = prompt | model
 
 
-def activity_logical_problem(complexity):
+def activity_logical_problem(data):
     respuesta = chain.invoke({
         "question": f"""
-        Crea un problema {complexity}. 
+        Crea un problema {data["complexity"]}. 
         Genera **tres respuestas posibles**: una debe ser correcta y las otras dos incorrectas. 
         Es **crucial** que incluyas todas las respuestas y que sigas estrictamente esta estructura:
 
